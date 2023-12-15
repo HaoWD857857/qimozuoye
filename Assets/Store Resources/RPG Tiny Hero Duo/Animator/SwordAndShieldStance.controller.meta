@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: de18daf7653beb844929e2cf20a068de
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 9100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 225148
+  packageName: RPG Tiny Hero Duo PBR Polyart
+  packageVersion: 2.0
+  assetPath: Assets/Store Resources/RPG Tiny Hero Duo/Animator/SwordAndShieldStance.controller
+  uploadId: 521528
