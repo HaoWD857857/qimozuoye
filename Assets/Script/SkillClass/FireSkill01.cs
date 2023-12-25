@@ -37,7 +37,7 @@ public class FireSkill01 : MonoBehaviour, ISkill
         }
         else
         {
-            Debug.Log("Q技能还在冷却中！");
+            //Debug.Log("Q技能还在冷却中！");
         }
     }
 

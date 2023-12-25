@@ -9508,6 +9508,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b0b496475d95f04dae4c533a5610756, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ExplosionPre: {fileID: 1134129239631916, guid: 765c057f256c3804ab3c5197c4a3b72a, type: 3}
+  damage: 15
 --- !u!54 &280021677354710476
 Rigidbody:
   m_ObjectHideFlags: 0

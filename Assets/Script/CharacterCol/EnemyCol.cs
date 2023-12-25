@@ -16,7 +16,7 @@ public class EnemyCol : MonoBehaviour,IEndGameObserver
     private NavMeshAgent agent;
     private Animator ani;
     protected GameObject attackTarget;
-    private CharacterStats characterStats;
+    protected CharacterStats characterStats;
     private Collider coll;
 
     private float speed; //记录原来的速度，实现追击正常速度，回去站桩的时候速度慢
@@ -35,7 +35,7 @@ public class EnemyCol : MonoBehaviour,IEndGameObserver
 
 
     //配合动画的的bool
-    bool isWalk, isChase, isFollowPlayer,isDead;
+    protected bool isWalk, isChase, isFollowPlayer,isDead;
     //广播后player死亡，enemy不再执行任何操作（没有同步）
     bool playerDead = false;
 
@@ -245,10 +245,10 @@ public class EnemyCol : MonoBehaviour,IEndGameObserver
     void Skill_Attack()
     {
         transform.LookAt(attackTarget.transform.position);
-        if(TargetInSkillRange())
-        {
+        //if(TargetInSkillRange())
+        //{
             ani.SetTrigger("Skill");
-        }
+        //}
     }
 
     bool FoundPlayer()
@@ -275,11 +275,12 @@ public class EnemyCol : MonoBehaviour,IEndGameObserver
             return false;
     }
 
+    //DragonCol中要重写此方法，所以改成public virtual
     //是否在技能攻击距离之内
-    bool TargetInSkillRange()
+    public virtual bool TargetInSkillRange()
     {
         if (attackTarget != null)
-            return Vector3.Distance(attackTarget.transform.position, transform.position) <= characterStats.attackData.skillRange;
+            return Vector3.Distance(attackTarget.transform.position, transform.position) <= characterStats.attackData.skillRange ;
         else
             return false;
     }
@@ -328,5 +329,6 @@ public class EnemyCol : MonoBehaviour,IEndGameObserver
         isWalk = false;
         isChase = false;
         attackTarget = null;
+        ani.GetComponent<NavMeshAgent>().isStopped = true;
     }
 }

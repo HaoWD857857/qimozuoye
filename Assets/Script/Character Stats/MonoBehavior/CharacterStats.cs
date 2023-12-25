@@ -63,6 +63,14 @@ public class CharacterStats : MonoBehaviour
         //    GameManager.Instance.playerStats.characterData.UpdataExp(characterData.killPoint);
         //（player的经验++放到enemy死亡判定里面了）
     }
+    //fire的伤害
+    public void TakeDamage(int damage,CharacterStats defener)
+    {
+        int currentDamge = Mathf.Max(damage - defener.CurrentDefence, 0);
+        defener.CurrentHealth = Mathf.Max(defener.CurrentHealth -  currentDamge, 0);
+        //Updata UI
+        UpdataHealthBarOnAttack?.Invoke(CurrentHealth, MaxHealth);
+    }
 
     private int CurrentDamage()
     {

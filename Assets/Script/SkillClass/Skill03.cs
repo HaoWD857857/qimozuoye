@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.AI;
 using UnityEngine.UI;
 //此脚本管理按键R实现技能动画
 public class Skill03 : MonoBehaviour,ISkill
@@ -22,12 +23,12 @@ public class Skill03 : MonoBehaviour,ISkill
     {
         if (!onCooldown)
         {
+            ani.GetComponent<NavMeshAgent>().isStopped = true;
             ani.SetTrigger("SkillTriggerR");
             StartCooldown();
             Invoke("ResetCooldown", cooldownTime); //  cooldownTime秒后重置 CD
         }
-        else
-            Debug.Log("W技能还在冷却中！");
+            //Debug.Log("W技能还在冷却中！");
     }
 
     private void StartCooldown() //开始冷却，每次开始都让计时器等于冷却时间
@@ -44,7 +45,7 @@ public class Skill03 : MonoBehaviour,ISkill
     public void ResetCooldown()
     {
         onCooldown = false;
-        Debug.Log("R技能冷却完毕！");
+        //Debug.Log("R技能冷却完毕！");
         cooldownImage.fillAmount = 1f; // 重置 CD 图片的填充状态
         cooldownImage.color = originalColor; //重置颜色
     }

@@ -13,10 +13,10 @@ MonoBehaviour:
   m_Name: Specter BaseAttackData
   m_EditorClassIdentifier: 
   attackRange: 2.5
-  skillRange: 2.5
+  skillRange: 5
   coolDown: 2
   skillCoolDown: 4
-  minDamge: 4
-  maxDamge: 6
+  minDamge: 5
+  maxDamge: 7
   criticalMultiplier: 2
   criticalChance: 0

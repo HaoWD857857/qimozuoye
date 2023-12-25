@@ -16,6 +16,7 @@ public class StopAgent : StateMachineBehaviour
         animator.GetComponent<NavMeshAgent>().isStopped = true;
     }
 
+    //加上之后代码结束会回到原位置，注释掉就能停在原地
     // OnStateExit is called when a transition ends and the state machine finishes evaluating this state
     override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {

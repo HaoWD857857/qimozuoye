@@ -31,7 +31,7 @@ public class FireSkill02 : MonoBehaviour, ISkill
         }
         else
         {
-            Debug.Log("W技能还在冷却中！");
+            //Debug.Log("W技能还在冷却中！");
         }
     }
     private void StartCooldown() //开始冷却，每次开始都让计时器等于冷却时间
@@ -47,7 +47,7 @@ public class FireSkill02 : MonoBehaviour, ISkill
     public void ResetCooldown()
     {
         onCooldown = false;
-        Debug.Log("W技能冷却完毕！");
+        //Debug.Log("W技能冷却完毕！");
         cooldownImage.fillAmount = 1f; // 重置 CD 图片的填充状态
         cooldownImage.color = originalColor; //重置颜色
     }

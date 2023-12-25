@@ -40,8 +40,12 @@ public class CharacterData_SO : ScriptableObject
         //所有你想提升数据的方法
         currentLevel = Mathf.Clamp(currentLevel + 1,0,maxLevel);
         //下一个等级所需要的经验值
-        baseExp += (int)(baseExp * LevelMultiplier);
-        maxHealth = (int)(maxHealth * LevelMultiplier);
+        //baseExp += (int)(baseExp * LevelMultiplier);
+        //maxHealth = (int)(maxHealth * LevelMultiplier);
+        baseExp = baseExp + 50;
+        maxHealth = maxHealth + 30;
+        GameManager.Instance.playerStats.attackData.minDamge += 1;
+        GameManager.Instance.playerStats.attackData.maxDamge += 1;
         //升级之后满血
         currentHealth = maxHealth;
         Debug.Log("LEVEL UP! 当前等级:" + currentLevel);

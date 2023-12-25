@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 using UnityEngine.AI;
@@ -9,6 +10,8 @@ public class PlayerCol : MonoBehaviour
 {
     public static bool IsAttacking = false;
     public static bool IsMoving = false;
+    public int Damage_W;
+    public int Damage_R;
 
     private Animator ani;
     private NavMeshAgent agent;
@@ -164,6 +167,34 @@ public class PlayerCol : MonoBehaviour
             targetStats.TakeDamage(characterStats, targetStats);
             }
         }
+    }
+    void Hit_W()
+    {
+        if (attackTarget != null)
+        {
+            float distance = Vector3.Distance(attackTarget.transform.position, transform.position);
+            if (distance <= characterStats.attackData.attackRange)
+            {
+                var targetStats = attackTarget.GetComponent<CharacterStats>();
+                targetStats.TakeDamage(Damage_W, targetStats);
+            }
+        }  
+    }
+    void Hit_R()
+    {
+        if (attackTarget != null)
+        {
+            float distance = Vector3.Distance(attackTarget.transform.position, transform.position);
+            if (distance <= characterStats.attackData.attackRange)
+            {
+                var targetStats = attackTarget.GetComponent<CharacterStats>();
+                targetStats.TakeDamage(Damage_R, targetStats);
+            }
+        }
+    }
+    void Skill_E()
+    {
+        GameManager.Instance.playerStats.characterData.currentHealth += 20;
     }
 
 }
