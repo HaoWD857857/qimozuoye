@@ -9515,7 +9515,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   force: 20
-  damage: 20
+  damage: 25
   target: {fileID: 0}
   ExplosionPre: {fileID: 1134129239631916, guid: 765c057f256c3804ab3c5197c4a3b72a, type: 3}
 --- !u!135 &1150939499953530729

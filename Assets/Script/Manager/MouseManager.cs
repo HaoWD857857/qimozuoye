@@ -10,6 +10,7 @@ public class MouseManager : Singleton<MouseManager>
 {
     //event Action<>:所有订阅了这个事件添加进去的方法都会被执行,需要注册 
     //eg：后面在PlayerCol中加入一个MoveTo方法： OnmouseClicked += MoveTo; 就可以在这里调用了
+    //两个事件都是在playerCol里面
     public event Action<Vector3> OnMouseClicked;
     public event Action<GameObject> OnEnemyClicked;
 
