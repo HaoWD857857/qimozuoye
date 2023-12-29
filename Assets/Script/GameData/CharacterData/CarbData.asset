@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4b2f0b25f920f64fb8a62a82621257f, type: 3}
   m_Name: CarbData
   m_EditorClassIdentifier: 
-  maxHealth: 80
-  currentHealth: 80
+  maxHealth: 50
+  currentHealth: 50
   baseDefence: 2
   currentDefence: 2
   killPoint: 50
